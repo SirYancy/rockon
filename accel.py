@@ -60,13 +60,20 @@ columns = ['Time Stamp (ms)',
            ' Gyro Z']
 data = pd.read_csv(datafile, dtype=datatypes)
 
-time_array = data[time_label].values
-x_array = data[accel_low_x].values
-y_array = data[accel_low_y].values
-z_array = data[accel_low_z].values
-geiger_array = data[geiger].values
+# time_array = data[time_label].values
+# x_array = data[accel_low_x].values
+# y_array = data[accel_low_y].values
+# z_array = data[accel_low_z].values
+# geiger_array = data[geiger].values
+# temp_array = data[temp].values
 
 # plt.plot(time_array, x_array)
-plt.plot(time_array, geiger_array)
+plt.subplot(311)
+plt.plot(time_label, accel_low_x, data=data, linewidth=1)
+plt.subplot(312)
+plt.plot(time_label, accel_low_y, data=data, linewidth=1)
+plt.subplot(313)
+plt.plot(time_label, accel_low_z, data=data, linewidth=1)
+plt.xlabel("Time")
 
 plt.show()
