@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # datafile = "data/data_edit.csv"
-datafile = "data/Team16_RockOn2019_Raw.csv"
+# datafile = "data/Team16_RockOn2019_Raw.csv"
+datafile = "data/rockon_data_edit.csv"
 
 time_label = 'Time Stamp (ms)'
 accel_low_x = ' Accel Low X'
@@ -69,11 +70,11 @@ data = pd.read_csv(datafile, dtype=datatypes)
 
 # plt.plot(time_array, x_array)
 plt.subplot(311)
-plt.plot(time_label, accel_low_x, data=data, linewidth=1)
+plt.plot(time_label, press, data=data, linewidth=1)
 plt.subplot(312)
-plt.plot(time_label, accel_low_y, data=data, linewidth=1)
+plt.plot(time_label, accel_low_x, data=data, linewidth=1)
 plt.subplot(313)
-plt.plot(time_label, accel_low_z, data=data, linewidth=1)
+plt.plot(time_label, gyro_z, data=data, linewidth=1)
 plt.xlabel("Time")
 
 plt.show()
